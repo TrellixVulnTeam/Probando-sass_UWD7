@@ -1,3 +1,47 @@
+$bgcaja1: #047700;
+$bgcaja2: #679c04;
+$texto:#ffff00;
+$titulo:#000000;
+$hover:#ffffff;
+
+@mixin cajas ($bgcaja) {
+    background-color: $bgcaja;
+    width: 98%;
+    margin: auto;
+
+    h1{
+    color: $titulo;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+    text-decoration:underline;
+    }
+
+    h2{
+    text-align: center;    
+    font-family: Arial, Helvetica, sans-serif;
+    color: $titulo;
+    font-size: 21px;
+    text-decoration: underline;
+    }
+
+    h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: $titulo;
+    text-decoration: underline;
+    }
+
+    p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: $texto;
+    &:hover{
+        transition: all 2s ease;
+        color: $hover; 
+    }
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -11,7 +55,7 @@ body{
 header{
     text-align: center;
     width: 100%;
-    height: 480px;
+    height: 450px;
     background-color: rgb(0, 88, 4);
     .F1{
     padding: 1rem;
@@ -22,31 +66,24 @@ header{
     font-family:Arial, Helvetica, sans-serif;
     }
     p{
-        font-size: 20px;
+        font-size: 22.5px;
         color: white;
         font-family: 'Times New Roman', Times, serif;
     }
 }
 
-section{
-    text-align: left;
-    margin: 1.5rem;
-    h2{
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        color: rgb(0, 0, 0);
-        text-align: center;
-        text-decoration:underline;
-    }
-    h3{
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-        text-align: left;
-        color: black;
-    }
-    p{
-     font-size: 20px;
-     color: white;
-     font-family: 'Times New Roman', Times, serif;
-    }
+.caja{
+    margin-top: 10px;
+.section1{
+    @include cajas ($bgcaja1);
+    border: 3px red solid;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.section2{
+    @include cajas ($bgcaja2);
+    @extend .section1;
+}
 }
 
 .Fotos{
